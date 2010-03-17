@@ -40,9 +40,12 @@
 |
 */
 
-$route['default_controller'] = "welcome";
+$route['default_controller'] = "home";
 $route['scaffolding_trigger'] = "";
 
+/* which brings us back to do oh oh oh doe a deer a female deer...*/
+
+$route[':any'] = 'home';
 
 /* End of file routes.php */
 /* Location: ./system/application/config/routes.php */
