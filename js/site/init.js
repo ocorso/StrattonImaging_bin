@@ -2,7 +2,7 @@ jQuery(document).ready(function($)
 {
 	var swfEmbed = {};
 		swfEmbed.flashvars = { baseUrl: escape(baseUrl)};
-		swfEmbed.parameters= { salign:"tl", allowfullscreen:true, allowscriptaccess:"always", bgcolor:"#fffaad", wmode:"transparent" };
+		swfEmbed.parameters= { salign:"tl", allowfullscreen:true, allowscriptaccess:"always", bgcolor:"#FF0", wmode:"opaque" };
 		swfEmbed.attributes = { name: "site" };
 		swfEmbed.minimumVersion = '10.0.45';
 
