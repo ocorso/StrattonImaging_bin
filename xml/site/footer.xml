@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<footer>
+	<strings>
+		<string id="legal"><![CDATA[&copy;2010 FPO Site. All Rights Reserved. Thank you]]></string>
+		<string id="legal2"><![CDATA[]]></string>
+	</strings>
+	
+	<links>
+		<link id="product_information" 	track_id="" 	url="http://localhost"><![CDATA[Product Information]]></link>
+		<link id="privacy_policy" 		track_id="" 	url="http://localhost"><![CDATA[Privacy]]></link>
+		<link id="ored_net"			track_id="" 	url="http://www.ored.net"><![CDATA[Visit ORed.net]]></link>
+		<link id="contact_us" 			track_id="" 	url="http://localhost"><![CDATA[Contact Us]]></link>
+	</links>
+</footer>

@@ -5,13 +5,13 @@
 		<setting id="path_swf" 			value="swf/" />
 		<setting id="path_img" 			value="img/" />
 		<setting id="path_vid" 			value="videos/" />
-		<setting id="defaultFeature"	value="" />
-		
+		<setting id="defaultScreen"		value="home" />
+	</settings>
 
 	<loadables type="components">
-		<component id="loader" 				swf="site/section_loader.swf"														weight="1" />
 		<component id="header" 				swf="site/header.swf" 				xml="site/header.xml"							weight="1" />
 		<component id="footer" 				swf="site/footer.swf" 				xml="site/footer.xml"							weight="1" />
+		<component id="ftpclient" 			swf="site/ftpclient.swf" 			xml="site/ftpclient.xml"						weight="1" />
 		<component id="background"			swf="site/background.swf"															weight="1" />
 		<component id="audio"				swf="site/audio.swf"																weight="1" />
 		<component id="assets"				swf="site/assets.swf"																weight="1" />
