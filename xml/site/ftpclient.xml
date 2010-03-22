@@ -1,0 +1,14 @@
+<ftpclient>
+	<user>
+		<username>ocorso</username>
+		<password>2ginger</password>
+	</user>
+	<user>
+		<username>lsessa</username>
+		<password>nardo</password>
+	</user>
+	<user>
+		<username>ftpuser</username>
+		<password>2Sendfiles</password>
+	</user>
+</ftpclient>
