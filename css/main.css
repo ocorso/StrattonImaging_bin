@@ -56,14 +56,14 @@ FLASH
 	display: block;
 	background: #DDD;	
 
-	min-width:960px;
+	min-width:675px;
 	min-height:570px;
 	width:100%;
 	height:100%;
 	overflow: auto;
 
-	*height:expression(document.body.clientHeight < 800? "795px": "100%");
-	*width:expression(document.body.clientWidth < 980? "978px": "100%");
+	*height:expression(document.body.clientHeight < 570? "568px": "100%");
+	*width:expression(document.body.clientWidth < 675? "673px": "100%");
 
 }
 
