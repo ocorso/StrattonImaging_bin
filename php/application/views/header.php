@@ -45,9 +45,10 @@
 			})
 		</script>
 	<![endif]-->
-	<script type="text/javascript" charset="utf-8">
+	<script type="text/javascript" charset="utf-8" defer="defer">
 		document.documentElement.className = "js";
+		$('#top').hide();
 	</script>
 </head>
-<body>
+<body style="display=none;">
 <div id="top"class="sun">
