@@ -10,10 +10,10 @@ jQuery(document).ready(function($)
 	{
 		if(!swfobject.hasFlashPlayerVersion(swfEmbed.minimumVersion)) swfEmbed.parameters = {};
 
-		$("#content").html("<div id='flash'></div>");
+		$("#top").html("<div id='flash'></div>");
 		swfobject.embedSWF("loader.swf","flash", "100%", "100%",swfEmbed.minimumVersion,"swf/expressInstall.swf",swfEmbed.flashvars,swfEmbed.parameters,swfEmbed.attributes);
 	}
 	else {
-		$("#noflash").show();
+		$("#top").show();
 	}
 });

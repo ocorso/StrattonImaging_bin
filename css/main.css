@@ -1,7 +1,7 @@
 /* ==============================================
 Yahoo Reset
 ============================================== */
-html{color:#000;background:#000;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}del,ins{text-decoration:none;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:baseline;}sub{vertical-align:baseline;}legend{color:#000;}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}input,button,textarea,select{*font-size:100%;}
+html{color:#000;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}del,ins{text-decoration:none;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:baseline;}sub{vertical-align:baseline;}legend{color:#000;}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}input,button,textarea,select{*font-size:100%;}
 /* ==============================================
 GLOBAL
 ============================================== */
@@ -13,8 +13,8 @@ html,body
 	font-size:20px;
 	font-family:"Arial";
 
-	color:#F00;
-	background: #EEE;
+
+	background-color: #f1f1f1;
 }
 
 a
@@ -47,6 +47,20 @@ a:visited
 	width:100%;
 	height:100%;
 }
+#screen
+{
+	background: url("../../img/no_flash/bg_stratton.jpg") no-repeat 0 0;
+
+	min-height:353px;
+	margin-top: auto;
+	
+
+	overflow: auto;
+
+	*height:expression(document.body.clientHeight < 353? "350px": "100%");
+
+	
+}
 
 /* ==============================================
 FLASH
@@ -56,14 +70,14 @@ FLASH
 	display: block;
 	background: #DDD;	
 
-	min-width:675px;
+	min-width:750px;
 	min-height:570px;
 	width:100%;
 	height:100%;
 	overflow: auto;
 
 	*height:expression(document.body.clientHeight < 570? "568px": "100%");
-	*width:expression(document.body.clientWidth < 675? "673px": "100%");
+	*width:expression(document.body.clientWidth < 750? "748px": "100%");
 }
 
 /* ==============================================
@@ -71,7 +85,7 @@ NO FLASH
 ============================================== */
 #site
 {
-	background: url("../../img/site/no_flash/bg_tile.jpg") repeat-y center;
+
 }
 
 #center
@@ -90,20 +104,27 @@ NO FLASH
 h1 {
  color: #444;
  background-color: transparent;
- border-bottom: 1px solid #D0D0D0;
  font-size: 153.9%;
  font-weight: bold;
  margin: 24px 0 2px 0;
  padding: 5px 0 6px 0;
 }
-
-code {
- font-family: Monaco, Verdana, Sans-serif;
- font-size: 12px;
- background-color: #f9f9f9;
- border: 1px solid #D0D0D0;
- color: #002166;
- display: block;
- margin: 14px 0 14px 0;
- padding: 12px 10px 12px 10px;
+#bottom{
+	height: 218px;
+	bottom: -1;
+	position: absolute;
+}
+#nav{
+	background: url("../../img/no_flash/bar.jpg") repeat-x center;
+	height: 49px;
+}
+#nav ul li
+{
+	display: inline;
+}
+#footer{
+	background-color: #070707;
+	background-image: url("../../img/no_flash/bg_footer.jpg");
+	background-repeat: no-repeat;
+	height: 169px;
 }

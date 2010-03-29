@@ -19,9 +19,9 @@ class Home extends Controller {
 		$data['baseUrl'] = $this->SiteModel->getBaseUrl();
 		$data['xml'] = $this->SiteModel->getXML();*/
 		
-
+		$this->load->view('header');
 		$this->load->view('home_view');	
-		
+		/* $this->load->view('footer'); */
 		
 	}
 }

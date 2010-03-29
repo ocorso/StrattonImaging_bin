@@ -1,49 +1,28 @@
-<html>
-<head>
-<title>Welcome to Owen's FPO Site</title>
+<h1 style="text-indent: -9999px">Stratton Imaging</h1>
 
-<script type="text/javascript">
-	var baseUrl = "<?= $this->config->item('base_url'); ?>";
-</script>
+	<div id="home">
+		<div id="stratton"></div>				
+	</div> <!-- end home -->
 
-<?= asset('css','css/main.css'); ?>
-<?= asset('js','js/jquery.js'); ?>
-<?= asset('js','js/swfobject.js'); ?>
-<?= asset('js','js/swfaddress.js'); ?>
-<?= asset('js','js/site/init.js'); ?>
-
-
-</head>
-<body>
-<div id="wholepage">
-	<div id="content">
-		<div id = "site">
-			<div id="center">
-				<div id= "noflash">
-					<h1>Welcome to Owen's FPO Site</h1>
-					
-					<p>I have loaded some helpers, created a site model, and modified the .htaccess file</p>
-					<br/>
-					<p>As you can tell, i'm quite a talented designer and typographer. I have exquisite taste in colors and page layout.</p>
-					<p>If you would like to edit this page you'll find it located at:</p>
-					<code>php/application/views/home_view.php</code>
-					
-					<p>The corresponding controller for this page is found at:</p>
-					<code>php/application/controllers/home.php</code>
-					
-					<p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.</p>
-					
-					<p><br />Page rendered in {elapsed_time} seconds</p>
-				
-				</div>
-
-			
-			</div>
-		
-		</div>
 	
-	</div>
+		<div id="logo">
+			
+		</div>
+		<div id="navigation">
+			<ul id="nav-left">
+				<li><a href="#/learn">Learn</a></li>
+				<li><a href="#/craft">Our Craft</a></li>
+			</ul>
+			<ul id="nav-right">
+				<li><a href="#/credits">Credits</a></li>
+				<li><a href="#/connect">Connect</a></li>
+			</ul>
+		</div>
 
-</div>
+		<div id="footer-left"></div>
+		<div id="footer-right"></div>
+
+
+</div><!-- end top -->
 </body>
 </html>
