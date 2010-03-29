@@ -464,6 +464,28 @@ class CI_FTP {
 
 		return ftp_nlist($this->conn_id, $path);
 	}
+	function getSize($path = '.')
+	{
+		if ( ! $this->_is_conn())
+		{
+			return FALSE;
+		}
+		$sizeInBytes = ftp_size($this->conn_id, $path);
+		
+		return round(($sizeInBytes/1024), 2);
+	
+	}
+	function getModDate($path = '.')
+	{
+		if ( ! $this->_is_conn())
+		{
+			return FALSE;
+		}
+		$TimeStamp = ftp_mdtm($this->conn_id, $path);
+		$date = date("m-d-Y", $TimeStamp);
+		return $date;
+	
+	}
 
 	// ------------------------------------------------------------------------
 
@@ -612,6 +634,7 @@ class CI_FTP {
 
 
 }
+ 
 // END FTP Class
 
 /* End of file Ftp.php */
