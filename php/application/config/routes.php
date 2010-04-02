@@ -43,8 +43,10 @@
 $route['default_controller'] = "home";
 $route['scaffolding_trigger'] = "";
 
-/* which brings us back to do oh oh oh doe a deer a female deer...*/
+//test jquery
+$route['jq'] = 'jquery/index';
 
+/* which brings us back to do oh oh oh doe a deer a female deer...*/
 $route[':any'] = 'home';
 
 /* End of file routes.php */
