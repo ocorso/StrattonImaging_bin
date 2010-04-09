@@ -43,8 +43,7 @@
 $route['default_controller'] = "home";
 $route['scaffolding_trigger'] = "";
 
-//test jquery
-$route['jq'] = 'jquery/index';
+$route['ftp/get_list.xml']				= 'ftpcontroller/get_list';
 
 /* which brings us back to do oh oh oh doe a deer a female deer...*/
 $route[':any'] = 'home';

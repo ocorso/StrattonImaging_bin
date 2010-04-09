@@ -17,6 +17,10 @@ class JQuery extends Controller {
 		
 	}//end function
 
+	function response()
+	{
+		$this->load->view('result');
+	}
 }//end class
 
 /* End of file jquery.php */

@@ -13,26 +13,20 @@ $(document).ready(function(){
     			
 	//add click listener
   
-	$(".vote-yes").click(function(){ var parentTag = $(this).parents(".vote");
-    								streamTitle = $(parentTag).attr("title");	
-									console.log(streamTitle);
-									$(parentTag).hide("fast", function(){$('<div id="thanks"></div>').appendTo('.ranking');
-																		$("#thanks").hide(0, function(){$('<h1>Thanks So much for voting Yes<h1>').appendTo('#thanks');
-																		$("#thanks").show("fast");	
-																										});
-																		});								
+	$(".vote").click(function()
+	{
+		var title = $(this).parents(".votes").attr("title");
+		console.log(title); 
+		var vote = $(this).hasClass("vote-yes") ? 'yes' : 'no';
+		console.log(vote);   		
+		$(this).parents(".votes").hide("fast", function()
+			{
+				$(this).parents(".ranking").load('/res .thanks', {'stream_title':title, 'vote':vote}, function()
+																			{
+																				$(".thanks").show("fast");
+																			}//end on load complete
+												);//end load
+			}//end hide complete
+		);//end hide method								
 					});//end of the a click event handler   
-	$(".vote-no").click(function(){ var parentTag = $(this).parents(".vote");
-    								streamTitle = $(parentTag).attr("title");	
-									console.log(streamTitle);
-									
-									$(this).parents(".vote").attr("title")
-
-									$(parentTag).hide("fast", function(){$('<div id="thanks"></div>').appendTo('.ranking');
-																		$("#thanks").hide(0, function(){$('<h1>Thanks So much for voting No<h1>').appendTo('#thanks');
-																		$("#thanks").show("fast");	
-																										});
-																		});								
-					});//end of the a click event handler   
-
 });//end document ready function
