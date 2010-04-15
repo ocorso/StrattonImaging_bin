@@ -18,6 +18,9 @@ class FtpController extends Controller {
 	}//end function
 		
 	function get_list() {
+		//toDO: have flash send the path as a post variable
+		//if($$this->input->path) $basePath = $$this->input->path;
+		
 		$this->_openConnection();
 		
 		$list = $this->ftp->list_files($this->basePath);
@@ -49,6 +52,11 @@ class FtpController extends Controller {
 	function _openConnection() {
 			
 		//here is some ftp stuff
+		
+		//uncomment this for deploy
+		//$config['hostname'] = 'localhost';
+		
+		//uncomment this for production
 		$config['hostname'] = 'www.strattonimaging.com';
 		$config['username'] = 'ocorso%02a11c5';
 		$config['password'] = 'Vamp5near';

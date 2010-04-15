@@ -40,13 +40,14 @@
 |
 */
 
-$route['default_controller'] = "home";
-$route['scaffolding_trigger'] = "";
+$route['default_controller'] 				= "home";
+$route['scaffolding_trigger'] 				= "";
 
-$route['ftp/get_list.xml']				= 'ftpcontroller/get_list';
+$route['xml/ftp/get_list.xml']				= 'ftpcontroller/get_list';
+
 
 /* which brings us back to do oh oh oh doe a deer a female deer...*/
-$route[':any'] = 'home';
+$route[':any'] 								= 'home';
 
 /* End of file routes.php */
 /* Location: ./system/application/config/routes.php */
