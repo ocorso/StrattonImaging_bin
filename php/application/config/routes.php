@@ -43,6 +43,8 @@
 $route['default_controller'] 				= "home";
 $route['scaffolding_trigger'] 				= "";
 
+$route['site/login.xml']					= "logincontroller/index";
+$route['site/test']							= "logincontroller/login";
 $route['xml/ftp/get_list.xml']				= 'ftpcontroller/get_list';
 
 
