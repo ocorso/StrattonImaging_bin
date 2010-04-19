@@ -8,7 +8,7 @@ class LoginController extends Controller {
 	function LoginController()
 	{
 		parent::Controller();
-			
+
 	}//end function
 	
 	function index()

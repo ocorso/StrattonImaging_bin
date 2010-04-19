@@ -38,6 +38,8 @@ $active_group = "default";
 $active_record = TRUE;
 
 $db['default']['hostname'] = "localhost";
+//switch above with below for production, FUCK NETWORK SOLUTIONS!!!
+//$db['default']['hostname'] = "mysqlv14";
 $db['default']['username'] = "strattondb";
 $db['default']['password'] = "Vamp5near";
 $db['default']['database'] = "strattondb";
@@ -45,7 +47,7 @@ $db['default']['dbdriver'] = "mysql";
 $db['default']['dbprefix'] = "";
 $db['default']['pconnect'] = TRUE;
 $db['default']['db_debug'] = TRUE;
-$db['default']['cache_on'] = FALSE;
+$db['default']['cache_on'] = TRUE;
 $db['default']['cachedir'] = "";
 $db['default']['char_set'] = "utf8";
 $db['default']['dbcollat'] = "utf8_general_ci";
