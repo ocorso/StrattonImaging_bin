@@ -47,6 +47,7 @@ $route['ftp/login_test']					= "logincontroller/index";
 $route['ftp/login_response']				= "ftp_controller/login";
 $route['ftp/list/(:any).xml']				= 'ftp_controller/get_list/$1';
 
+$route['xml/site/craft.xml']				= 'xml_controller/craft';
 
 /* which brings us back to do oh oh oh doe a deer a female deer...*/
 $route[':any'] 								= 'home';
