@@ -43,9 +43,9 @@
 $route['default_controller'] 				= "home";
 $route['scaffolding_trigger'] 				= "";
 
-$route['site/login.xml']					= "logincontroller/index";
-$route['site/test']							= "logincontroller/login";
-$route['xml/ftp/get_list.xml']				= 'ftpcontroller/get_list';
+$route['ftp/login_test']					= "logincontroller/index";
+$route['ftp/login_response']				= "ftp_controller/login";
+$route['ftp/list/(:any).xml']				= 'ftp_controller/get_list/$1';
 
 
 /* which brings us back to do oh oh oh doe a deer a female deer...*/

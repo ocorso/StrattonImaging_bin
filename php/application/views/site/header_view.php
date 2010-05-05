@@ -26,8 +26,7 @@
 <?= asset('js','js/swfobject.js'); ?>
 <?= asset('js','js/swfaddress.js'); ?>
 <?= asset('js','js/site/init.js'); ?>
-<?= asset('js', 'js/site/application.js');?>
-<?= asset('js', 'js/site/compiled.js');?>
+
 
 	<!--[if lte IE 6]>
 			<link rel="stylesheet" href="css/ie6.css" type="text/css" />

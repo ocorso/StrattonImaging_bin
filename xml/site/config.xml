@@ -13,6 +13,7 @@
 		<component id="footer" 				swf="site/footer.swf" 				xml="site/footer.xml"							weight="1" />
 		<component id="ftpclient" 			swf="site/ftpclient.swf" 			xml="site/ftpclient.xml"						weight="1" />
 		<component id="background"			swf="site/background.swf"															weight="1" />
+		<component id="loader"		swf="site/section_loader.swf"														weight="1" />
 	</loadables>
 	
 	<loadables type="screens">

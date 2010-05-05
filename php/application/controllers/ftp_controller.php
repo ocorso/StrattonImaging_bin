@@ -1,6 +1,6 @@
 <?php
 
-class FtpController extends Controller {
+class Ftp_controller extends Controller {
 
 	var $_helpers = array(
 		'url',
@@ -8,16 +8,26 @@ class FtpController extends Controller {
 	);
 	
 	var $basePath = "/htdocs/ftpuser/";
-	function FtpController()
+	
+	function Ftp_controller()
 	{
 		parent::Controller();
 		
 		$this->load->library('ftp');
-		
 		//$this->output->enable_profiler(TRUE);
+
 	}//end function
-		
-	function get_list() {
+	
+	function login(){
+	
+		$this->load->model('Ftp_Model');
+	
+		$data['response'] = $this->Ftp_Model->checkLogin($this->input->post('username'), $this->input->post('password'));
+		$this->load->view('ftp/login_response', $data);
+				
+	}//end function	
+	
+	function get_list($initialPath) {
 		//toDO: have flash send the path as a post variable
 		//if($$this->input->path) $basePath = $$this->input->path;
 		
@@ -35,8 +45,7 @@ class FtpController extends Controller {
 			
 			$files[$i] = array(	'name'			=> $name[1], 
 								'size'			=>$size, 
-								'date_modified'	=>$date
-								
+								'date_modified'	=>$date							
 			);
 			$i++;
 		}
@@ -58,46 +67,13 @@ class FtpController extends Controller {
 		
 		//uncomment this for production
 		$config['hostname'] = 'www.strattonimaging.com';
-		$config['username'] = 'ocorso%02a11c5';
-		$config['password'] = 'Vamp5near';
+		$config['username'] = 'codeigniter';
+		$config['password'] = 'h@ckp40F';
 		$config['debug'] = TRUE;
 		
-		$this->ftp->connect($config);
-		
-		
+		$this->ftp->connect($config);	
 	}//end function
 	
-	/**
-	 * Converts human readable file size (e.g. 10 MB, 200.20 GB) into bytes.
-	 *
-	 * @param string $str
-	 * @return int the result is in bytes
-	 * @author Svetoslav Marinov
-	 * @author http://slavi.biz
-	 */
-	function filesize2bytes($str) {
-	    $bytes = 0;
-
-	    $bytes_array = array(
-	        'B' => 1,
-	        'KB' => 1024,
-	        'MB' => 1024 * 1024,
-	        'GB' => 1024 * 1024 * 1024,
-	        'TB' => 1024 * 1024 * 1024 * 1024,
-	        'PB' => 1024 * 1024 * 1024 * 1024 * 1024,
-	    );
-
-	    $bytes = floatval($str);
-
-	    if (preg_match('#([KMGTP]?B)$#si', $str, $matches) && !empty($bytes_array[$matches[1]])) {
-	        $bytes *= $bytes_array[$matches[1]];
-	    }
-
-	    $bytes = intval(round($bytes, 2));
-
-	    return $bytes;
-	}
-
 }//end class
 
 

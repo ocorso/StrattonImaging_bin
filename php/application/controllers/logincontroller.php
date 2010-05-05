@@ -10,17 +10,8 @@ class LoginController extends Controller {
 		parent::Controller();
 
 	}//end function
-	
-	function index()
-	{
 
-		$this->load->model('User_Model');
-		$data['success'] = $this->User_Model->get_login($this->input->post('username'), $this->input->post('password'));
-		$this->load->view('site/response', $data);
-		
-	}//end function
-	
-	function login(){
+	function index(){
 		$this->load->view('site/login');
 	}//end function login
 	
