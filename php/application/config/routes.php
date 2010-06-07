@@ -40,17 +40,18 @@
 |
 */
 
-$route['default_controller'] 				= "home";
+$route['default_controller'] 				= "home_controller";
 $route['scaffolding_trigger'] 				= "";
 
-$route['ftp/login_test']					= "logincontroller/index";
+$route['ftp/login_test']					= "login_controller/index";
 $route['ftp/login_response']				= "ftp_controller/login";
 $route['ftp/list/(:any).xml']				= 'ftp_controller/get_list/$1';
 
-$route['xml/site/craft.xml']				= 'xml_controller/craft';
+$route['xml/site/learn.xml']				= 'screen_controller/learn';
+$route['xml/site/craft.xml']				= 'screen_controller/craft';
 
 /* which brings us back to do oh oh oh doe a deer a female deer...*/
-$route[':any'] 								= 'home';
+$route[':any'] 								= 'home_controller';
 
 /* End of file routes.php */
 /* Location: ./system/application/config/routes.php */

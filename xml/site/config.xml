@@ -4,7 +4,7 @@
 		<setting id="path_xml" 			value="xml/" />
 		<setting id="path_swf" 			value="swf/" />
 		<setting id="path_img" 			value="img/" />
-		<setting id="path_vid" 			value="videos/" />
+		<setting id="path_vid" 			value="swf/f4v/" />
 		<setting id="defaultScreen"		value="home" />
 	</settings>
 

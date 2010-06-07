@@ -1,11 +1,11 @@
 <?php
 
-class Home extends Controller {
+class Home_controller extends Controller {
 
 
 	
 	
-	function Home()
+	function Home_controller()
 	{
 		parent::Controller();
 			

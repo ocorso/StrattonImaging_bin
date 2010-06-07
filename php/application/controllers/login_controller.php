@@ -1,11 +1,11 @@
 <?php
 
-class LoginController extends Controller {
+class Login_controller extends Controller {
 
 
 	
 	
-	function LoginController()
+	function Login_controller()
 	{
 		parent::Controller();
 

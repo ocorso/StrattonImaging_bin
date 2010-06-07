@@ -40,6 +40,7 @@ $active_record = TRUE;
 $db['default']['hostname'] = "localhost";
 //switch above with below for production, FUCK NETWORK SOLUTIONS!!!
 //$db['default']['hostname'] = "mysqlv14";
+
 $db['default']['username'] = "strattondb";
 $db['default']['password'] = "Vamp5near";
 $db['default']['database'] = "strattondb";
