@@ -22,9 +22,10 @@
 </script>
 
 <?= asset('css','css/site/default.css'); ?>
-<?= asset('js','js/jquery.js'); ?>
+<?= asset('js','http://code.jquery.com/jquery-1.4.2.min.js'); ?>
 <?= asset('js','js/swfobject.js'); ?>
 <?= asset('js','js/swfaddress.js'); ?>
+<?= asset('js','js/minifiedColorAnimation.js'); ?>
 <?= asset('js','js/site/init.js'); ?>
 
 
