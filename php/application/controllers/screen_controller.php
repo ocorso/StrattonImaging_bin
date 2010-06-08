@@ -28,17 +28,17 @@ Using state-of-the-art technology, cutting edge materials, and superior craftsme
 		$this->load->view('xml/learn', $data);
 		
 	}//end function
-	function craft(){
-		$data = array (	'services'=> array(	'Grand Format', 
-											'Custom Cut Vinyl', 
-											'Event Signage', 
-											'Graphics In Motion', 
-											'Comprehensive Capabilities', 
-											'Studio', 
-											'Offset Printing', 
-											'Specialty Retail Displays', 
-											'Theatrical Backdrops',
-											'Graphics on Anything'
+	function craft(){					//	Service name		// number of images
+		$data = array (	'services'=> array(	'Grand Format' 				=> '6', 
+											'Custom Cut Vinyl'		 	=> '4', 
+											'Event Signage' 			=> '5', 
+											'Graphics In Motion' 		=> '5', 
+											'Comprehensive Capabilities'=> '6', 
+											'Studio' 					=> '1', 
+											'Offset Printing' 			=> '4', 
+											'Retail Displays' 			=> '6', 
+											'Theatrical Backdrops' 		=> '5',
+											'Graphics on Anything' 		=> '2'
 										),
 						'imagesPath'	=> "site/craft/",
 						'filename'		=> "1.jpg"	
