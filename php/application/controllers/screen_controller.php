@@ -20,10 +20,10 @@ class Screen_Controller extends Controller {
 	}//end function index
 	
 	function learn(){
-		$data = array ( 'experiment' => "", 
+		$data = array ( 'experiment' => "Perceptual adaptation is where our brain adapts to the perception that it receives. The world that we perceive is processed via our brain. Our brain plays a crucial role in how our vision works. If our vision is altered slightly, our brain accounts for the difference and will allow us to perceive the world as â€œnormal.â€ For example, if you are fitted for glasses that distort the image the subject sees by forty five degrees, then over time, the brain perceives the acute difference as normal. George Stratton, a psychologist, was intrigued by the idea of perceptual adaptation. Because our retina receives images upside down, he was intrigued to see what happens when the brain receives an image that is right side up. Stratton conducted experiments in the 1890s, in which he tested the theory of perceptual adaptation. He wore a reversing telescope for an extended period of time.  By day four, things were upright (not inverted), and on day five things appeared normal until he concentrated on them; then they became inverted again. In Conclusion, perceptual adaptation is an element that has been researched extensively by George Stratton. All of his experiments prove the theory of perceptual adaptation to be true. Perceptual adaptation is a theory that proves the notion that our brain and senses collaborate. Our vision can be altered, but our brain corrects this alteration to seem correct. Our brain allows us to live a normal life with an altered perception of a normal life", 
 						'imaging' => "Since 2001, Stratton Imaging has been a visionary print provider offering clients custom, unique solutions to their graphic needs.
 
-Using state-of-the-art technology, cutting edge materials, and superior craftsmenship, Stratton delivers the job right everytime. Basically, we provide hands on graphic management from conception to completion to insure your projectÕs success."	
+Using state-of-the-art technology, environmentally-safe materials, and superior craftsmenship, Stratton delivers the job right everytime. Basically, we provide hands on graphic management from conception to completion to insure your projectÕs success."	
 					);
 		$this->load->view('xml/learn', $data);
 		
@@ -40,8 +40,7 @@ Using state-of-the-art technology, cutting edge materials, and superior craftsme
 											'Theatrical Backdrops' 		=> '5',
 											'Graphics on Anything' 		=> '2'
 										),
-						'imagesPath'	=> "site/craft/",
-						'filename'		=> "1.jpg"	
+						'imagesPath'	=> "site/craft/"
 					);
 		$this->load->view('xml/craft', $data);
 	}//end function
