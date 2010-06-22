@@ -18,15 +18,15 @@
 
 
 <script type="text/javascript">
-	var baseUrl = "<?= $this->config->item('base_url'); ?>";
+	var baseUrl = "<?php echo $this->config->item('base_url'); ?>";
 </script>
 
-<?= asset('css','css/site/default.css'); ?>
-<?= asset('js','http://code.jquery.com/jquery-1.4.2.min.js'); ?>
-<?= asset('js','js/swfobject.js'); ?>
-<?= asset('js','js/swfaddress.js'); ?>
-<?= asset('js','js/minifiedColorAnimation.js'); ?>
-<?= asset('js','js/site/init.js'); ?>
+<?php echo asset('css','css/site/default.css'); ?>
+<?php echo asset('js','http://code.jquery.com/jquery-1.4.2.min.js'); ?>
+<?php echo asset('js','js/swfobject.js'); ?>
+<?php echo asset('js','js/swfaddress.js'); ?>
+<?php echo asset('js','js/minifiedColorAnimation.js'); ?>
+<?php echo asset('js','js/site/init.js'); ?>
 
 
 	<!--[if lte IE 6]>
