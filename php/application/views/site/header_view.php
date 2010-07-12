@@ -28,27 +28,10 @@
 <?php echo asset('js','js/minifiedColorAnimation.js'); ?>
 <?php echo asset('js','js/site/init.js'); ?>
 
-
-	<!--[if lte IE 6]>
-			<link rel="stylesheet" href="css/ie6.css" type="text/css" />
-	<![endif]-->
-<!--[if lte IE 7]>
-			<script type="text/javascript" charset="utf-8">
-			$(function(){
-			  var $sun = $('.sun'),
-						width = 1000,
-						$win = $(window);
-				$win.resize(function(){
-					var w = Math.ceil(($win.width() / 2) - 500);
-					$sun.css('background-position', w + "px bottom");
-				}).resize()
-			})
-		</script>
-	<![endif]-->
 	<script type="text/javascript" charset="utf-8" defer="defer">
 		document.documentElement.className = "js";
 		$('#top').hide();
 	</script>
 </head>
-<body style="display=none;">
+<body>
 <div id="top"class="sun">

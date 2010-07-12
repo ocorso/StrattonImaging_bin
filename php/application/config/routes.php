@@ -49,6 +49,8 @@ $route['ftp/list/(:any).xml']				= 'ftp_controller/get_list/$1';
 
 $route['xml/site/learn.xml']				= 'screen_controller/learn';
 $route['xml/site/craft.xml']				= 'screen_controller/craft';
+$route['xml/site/credits.xml']				= 'screen_controller/credits';
+
 
 /* which brings us back to do oh oh oh doe a deer a female deer...*/
 $route[':any'] 								= 'home_controller';

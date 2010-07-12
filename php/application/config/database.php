@@ -38,8 +38,8 @@ $active_group = "default";
 $active_record = TRUE;
 
 $db['default']['hostname'] = "localhost";
-//switch above with below for production, FUCK NETWORK SOLUTIONS!!!
-//$db['default']['hostname'] = "mysqlv14";
+//switch above with below for production, FUCK GO DADDY!!!
+//$db['default']['hostname'] = "strattondb.db.6213043.hostedresource.com";
 
 $db['default']['username'] = "strattondb";
 $db['default']['password'] = "Vamp5near";

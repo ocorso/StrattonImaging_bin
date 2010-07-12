@@ -46,7 +46,22 @@ Using state-of-the-art technology, environmentally-safe materials, and superior 
 	}//end function
 	
 	function credits(){
-		$data = array();
+		$data = array(	"credits"=> array(		
+									array('id'=>"other_guys", 'title' => "The Other Guys", 'filename'=>"tog.jpg"),
+									array('id'=>"taking_pelham", 'title'=> "The Taking of Pelham 123", 'filename'=>"top.jpg"),
+									array('id'=>"rum_diary", 'title' => "The Rum Diary", 'filename'=>"rd.jpg"),
+									array('id'=>"unusuals", 'title' => "The Unusuals", 'filename'=>"u.jpg"),
+									array('id'=>"sorcerers_apprentice", 'title' => "The Sorcerers Apprentice", 'filename'=>"sa.jpg"),
+									array('id'=>"morning_glory", 'title' => "Morning Glory", 'filename'=>"mg.jpg"),
+									array('id'=>"everybodys_fine", 'title' => "Everybodys Fine", 'filename'=>"ef.jpg"),
+									array('id'=>"cupid", 'title' => "Cupid", 'filename'=>"c.jpg"),
+									array('id'=>"royal_pains", 'title' => "Royal Pains", 'filename'=>"rp.jpg"),
+									array('id'=>"mp", 'title' => "Mildred Pierce", 'filename'=>"mp.jpg")
+								),
+						'imagesPath'	=> "site/credits/"
+					);
+
+		$this->load->view('xml/credits', $data);
 		
 	}//end function
 	
