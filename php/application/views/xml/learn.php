@@ -1,6 +1,14 @@
+<?php 
+	$i = '<![CDATA[';
+	$o = ']]>';
+?>
 <learn>
-	<strings>
-		<string id="experiment"><![CDATA[<?php echo $experiment; ?>]]></string>
-		<string id="imaging"><![CDATA[<?php echo $imaging; ?>]]></string>
-	</strings>
+	<sections>
+		<?php foreach ($sections as $section): ?>
+		<section id="<?php echo $section['id']; ?>">
+			<label><?php echo $i.$section['label'].$o; ?></label>
+			<content><?php echo $i.$section['content'].$o ?></content> 
+		</section>
+		<?php endforeach; ?>
+	</sections>
 </learn>
