@@ -1,0 +1,11 @@
+.svn
+
+# osx noise
+.DS_Store
+
+# textmate project
+*.tmproj
+
+# app specific
+php/application/config/database.php
+swf/f4v/*
