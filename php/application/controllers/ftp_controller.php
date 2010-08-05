@@ -7,7 +7,7 @@ class Ftp_controller extends Controller {
 		'asset'
 	);
 	
-	var $basePath = "/htdocs/ftpuser/";
+	var $basePath = "/";
 	
 	function Ftp_controller()
 	{
@@ -39,23 +39,30 @@ class Ftp_controller extends Controller {
 				
 	}//end function	
 	
-	function get_list($initialPath) {
+	function get_directory() {
+		$d = $this->input->post('d');
+		$jArr = json_decode(base64_decode($d), true);
+		
+		$currentPath = $jArr['p'];
+		print_r("here is the path: ".$currentPath);
+		
 		//toDO: have flash send the path as a post variable
 		//if($$this->input->path) $basePath = $$this->input->path;
 		
 		$this->_openConnection();
 		
 		$list = $this->ftp->list_files($this->basePath);
+		print_r($list);
 		$i = 0;
 		$files = array();
 		foreach($list as $file){
 			$filename =  $file;
-			$name = explode($this->basePath, $filename);
+			$name = $filename;
 			
 			$size = $this->ftp->getSize($filename);
 			$date = $this->ftp->getModDate($filename);
 			
-			$files[$i] = array(	'name'			=> $name[1], 
+			$files[$i] = array(	'name'			=> $name, 
 								'size'			=>$size, 
 								'date_modified'	=>$date							
 			);
