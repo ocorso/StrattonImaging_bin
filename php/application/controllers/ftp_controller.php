@@ -19,10 +19,22 @@ class Ftp_controller extends Controller {
 	}//end function
 	
 	function login(){
-	
+		//take user creds
+		//check login, 
+		//verify login username and password returns a path
+		//when it does, return name and email to display in flash
+		
+		//asychronously retrieve ftp directory. green/red indicator in view.
+		
 		$this->load->model('Ftp_Model');
-	
-		$data['response'] = $this->Ftp_Model->checkLogin($this->input->post('username'), $this->input->post('password'));
+		$d = $this->input->post('d');
+		$jArr = json_decode(base64_decode($d), true);
+		
+		
+		$d = base64_encode(json_encode($this->Ftp_Model->checkLogin($jArr['u'],$jArr['p'])));
+		
+		$data['response'] = $d;
+		
 		$this->load->view('ftp/login_response', $data);
 				
 	}//end function	

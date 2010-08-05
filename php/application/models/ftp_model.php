@@ -17,9 +17,16 @@ class Ftp_Model extends Model {
         $query 		= $this->db->get();
         $result 	= $query->result_array();
 
-        $success 	= (isset($result[0]['id'])) 				? 	'yes': 'no';
-      	$iDir		= (isset($result[0]['initial_directory'])) 	?	$result[0]['initial_directory'] : "";
-        $r 			= array('success'=>$success, 'initial_directory' => $iDir);
+        $success 	= (isset($result[0]['id'])) 				? 	'yep': 'nope';
+      	$initialDir	= (isset($result[0]['initial_directory'])) 	?	$result[0]['initial_directory'] : "";
+        $email		= (isset($result[0]['email']))				?	$result[0]['email'] : "";
+        $name		= (isset($result[0]['name']))				?	$result[0]['name'] : "";
+        $r 			= array('s' => $success, 
+        					'p' => $initialDir,
+        					'n' => $name, 
+        					'e' => $email
+        				);
+        
        
 		return $r;
     }//end function get_login
