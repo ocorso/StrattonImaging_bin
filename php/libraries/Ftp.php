@@ -461,20 +461,103 @@ class CI_FTP {
 		{
 			return FALSE;
 		}
+		$buff 	= ftp_rawlist($this->conn_id, $path, false);//true means Recursive
+print_r($buff);
+		$items	=  $this->parse_directory($buff, $path);
+		return $items;
 
-		return ftp_nlist($this->conn_id, $path);
 	}
-	function getSize($path = '.')
-	{
-		if ( ! $this->_is_conn())
-		{
-			return FALSE;
-		}
-		$sizeInBytes = ftp_size($this->conn_id, $path);
-		
-		return round(($sizeInBytes/1024), 2);
+	/*
+	* Got this function from comments on php.net: http://php.net/manual/en/function.ftp-rawlist.php
+	*/
 	
+	 function parse_directory($buff, $path){
+
+        //$all_folders = ftp_nlist($this->conection, $_GET['path']);
+        foreach ($buff as $folder)
+         {
+
+            $struc = array();
+            $current = preg_split("/[\s]+/",$folder,9);
+            
+            $struc['perms']    = $current[0];
+            $struc['permsn']= $this->chmodnum($current[0]);
+            $struc['number']= $current[1];
+            $struc['owner']    = $current[2];
+            $struc['group']    = $current[3];
+            $struc['size']    = get_size($current[4]);
+            $struc['month']    = $current[5];
+            $struc['day']    = $current[6];
+            $struc['time']    = $current[7];
+            $struc['name']    = str_replace('//','',$current[8]);
+            //$struc['raw']    = $folder;
+            
+            if ($struc['name'] != '.' && $struc['name'] != '..' && get_type($struc['perms']) == "folder")
+             {
+                $folders[] = $struc;
+             }
+            elseif ($struc['name'] != '.' && $struc['name'] != '..' && get_type($struc['perms']) == "link")
+             {
+                $links[] = $struc;
+             }
+            elseif ($struc['name'] != '.' && $struc['name'] != '..')
+             {
+                $files[] = $struc;
+             }
+         }
+        return array($folders,$links,$files);
+     }
+
+      function get_size($size)
+     {
+         if ($size < 1024)
+          {
+              return round($size,2).' Byte';
+          }
+         elseif ($size < (1024*1024))
+          {
+              return round(($size/1024),2).' MB';
+          }
+         elseif ($size < (1024*1024*1024))
+          {
+              return round((($size/1024)/1024),2).' GB';
+          }
+         elseif ($size < (1024*1024*1024*1024))
+          {
+              return round(((($size/1024)/1024)/1024),2).' TB';
+          }
+     }
+
+    function get_type($perms)
+     {
+        if (substr($perms, 0, 1) == "d")
+         {
+            return 'folder';
+         }
+        elseif (substr($perms, 0, 1) == "l")
+         {
+            return 'link';
+         }
+        else
+         {
+            return 'file';
+         }
+     }
+     	
+	// little helper functions
+	function byteconvert($bytes) {
+	    $symbol = array('B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB');
+	    $exp = floor( log($bytes) / log(1024) );
+	    return sprintf( '%.2f ' . $symbol[ $exp ], ($bytes / pow(1024, floor($exp))) );
 	}
+	
+	function chmodnum($chmod) {
+	    $trans = array('-' => '0', 'r' => '4', 'w' => '2', 'x' => '1');
+	    $chmod = substr(strtr($chmod, $trans), 1);
+	    $array = str_split($chmod, 3);
+	    return array_sum(str_split($array[0])) . array_sum(str_split($array[1])) . array_sum(str_split($array[2]));
+	}
+
 	function getModDate($path = '.')
 	{
 		if ( ! $this->_is_conn())

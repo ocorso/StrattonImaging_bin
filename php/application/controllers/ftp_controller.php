@@ -44,7 +44,7 @@ class Ftp_controller extends Controller {
 		$jArr = json_decode(base64_decode($d), true);
 		
 		$currentPath = $jArr['p'];
-		print_r("here is the path: ".$currentPath);
+print_r("here is the path: ".$currentPath."\n");
 		
 		//toDO: have flash send the path as a post variable
 		//if($$this->input->path) $basePath = $$this->input->path;
@@ -52,28 +52,18 @@ class Ftp_controller extends Controller {
 		$this->_openConnection();
 		
 		$list = $this->ftp->list_files($this->basePath);
-		print_r($list);
-		$i = 0;
+var_dump($list);
+		
 		$files = array();
-		foreach($list as $file){
-			$filename =  $file;
-			$name = $filename;
-			
-			$size = $this->ftp->getSize($filename);
-			$date = $this->ftp->getModDate($filename);
-			
-			$files[$i] = array(	'name'			=> $name, 
-								'size'			=>$size, 
-								'date_modified'	=>$date							
-			);
-			$i++;
+		foreach($list as $item){
+			//todo prep items for json conversion			
 		}
 
 		$data = array(
 			'files' => $files
 		);
 		$this->ftp->close(); 
-		$this->load->view('ftp/get_list_view', $data);
+		$this->load->view('ftp/get_directory', $data);
 
 	}//end function
 	
@@ -88,7 +78,7 @@ class Ftp_controller extends Controller {
 		$config['hostname'] = 'www.strattonimaging.com';
 		$config['username'] = 'codeigniter';
 		$config['password'] = 'h@ckp40F';
-		$config['debug'] = TRUE;
+		$config['debug'] = FALSE;
 		
 		$this->ftp->connect($config);	
 	}//end function
