@@ -22,7 +22,7 @@
 </script>
 
 <?php echo asset('css','css/site/default.css'); ?>
-<?php echo asset('js','http://code.jquery.com/jquery-1.4.2.min.js'); ?>
+<?php echo asset('js','js/jquery.js'); ?>
 <?php echo asset('js','js/swfobject.js'); ?>
 <?php echo asset('js','js/swfaddress.js'); ?>
 <?php echo asset('js','js/minifiedColorAnimation.js'); ?>
