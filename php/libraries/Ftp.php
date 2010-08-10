@@ -462,7 +462,7 @@ class CI_FTP {
 			return FALSE;
 		}
 		$buff 	= ftp_rawlist($this->conn_id, $path, false);//true means Recursive
-print_r($buff);
+//print_r($buff);
 		$items	=  $this->parse_directory($buff, $path);
 		return $items;
 
@@ -472,7 +472,10 @@ print_r($buff);
 	*/
 	
 	 function parse_directory($buff, $path){
-
+		$folders 	= array();
+		$links		= array();
+		$files		= array();
+		
         //$all_folders = ftp_nlist($this->conection, $_GET['path']);
         foreach ($buff as $folder)
          {
@@ -485,18 +488,18 @@ print_r($buff);
             $struc['number']= $current[1];
             $struc['owner']    = $current[2];
             $struc['group']    = $current[3];
-            $struc['size']    = get_size($current[4]);
+            $struc['size']    = $this->get_size($current[4]);
             $struc['month']    = $current[5];
             $struc['day']    = $current[6];
             $struc['time']    = $current[7];
             $struc['name']    = str_replace('//','',$current[8]);
             //$struc['raw']    = $folder;
             
-            if ($struc['name'] != '.' && $struc['name'] != '..' && get_type($struc['perms']) == "folder")
+            if ($struc['name'] != '.' && $struc['name'] != '..' && $this->get_type($struc['perms']) == "folder")
              {
                 $folders[] = $struc;
              }
-            elseif ($struc['name'] != '.' && $struc['name'] != '..' && get_type($struc['perms']) == "link")
+            elseif ($struc['name'] != '.' && $struc['name'] != '..' && $this->get_type($struc['perms']) == "link")
              {
                 $links[] = $struc;
              }
@@ -505,7 +508,10 @@ print_r($buff);
                 $files[] = $struc;
              }
          }
-        return array($folders,$links,$files);
+        return array(	'folders' =>$folders,
+        				'links'=>$links,
+        				'files'=>$files
+        			);
      }
 
       function get_size($size)
@@ -514,17 +520,17 @@ print_r($buff);
           {
               return round($size,2).' Byte';
           }
-         elseif ($size < (1024*1024))
+         elseif ($size < (1024*1024))//1,048,576
           {
-              return round(($size/1024),2).' MB';
+              return round(($size/1024),2).' KB';
           }
          elseif ($size < (1024*1024*1024))
           {
-              return round((($size/1024)/1024),2).' GB';
+              return round((($size/1024)/1024),2).' MB';
           }
          elseif ($size < (1024*1024*1024*1024))
           {
-              return round(((($size/1024)/1024)/1024),2).' TB';
+              return round(((($size/1024)/1024)/1024),2).' GB';//1,073,741,824
           }
      }
 

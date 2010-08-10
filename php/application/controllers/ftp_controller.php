@@ -44,23 +44,20 @@ class Ftp_controller extends Controller {
 		$jArr = json_decode(base64_decode($d), true);
 		
 		$currentPath = $jArr['p'];
-print_r("here is the path: ".$currentPath."\n");
-		
-		//toDO: have flash send the path as a post variable
-		//if($$this->input->path) $basePath = $$this->input->path;
-		
 		$this->_openConnection();
 		
-		$list = $this->ftp->list_files($this->basePath);
-var_dump($list);
+		$list = $this->ftp->list_files($currentPath);
+
+//print_r($list);
 		
 		$files = array();
-		foreach($list as $item){
-			//todo prep items for json conversion			
-		}
+		foreach($list['folders'] as $item){
+	
+			$files[] =	array ("Name"=>$item['name'], "Date"=>$item['time'], "Size"=>$item['size'], "Type"=>"folder");			
+		}//end foreach
 
 		$data = array(
-			'files' => $files
+			'files' => json_encode($files)
 		);
 		$this->ftp->close(); 
 		$this->load->view('ftp/get_directory', $data);
