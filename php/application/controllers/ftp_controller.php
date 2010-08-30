@@ -48,14 +48,20 @@ class Ftp_controller extends Controller {
 		
 		$list = $this->ftp->list_files($currentPath);
 
-//print_r($list);
+/*
+   return array(		'folders' =>$folders,
+        				'links'=>$links,
+        				'files'=>$files
+        			);
+*/
 		
 		$files = array();
-		foreach($list['folders'] as $item){
-	
+		
+		foreach($list['folders'] as $item)
 			$files[] =	array ("Name"=>$item['name'], "Date"=>$item['time'], "Size"=>$item['size'], "Type"=>"folder");			
-		}//end foreach
-
+		foreach($list['files'] as $item)
+			$files[] =	array ("Name"=>$item['name'], "Date"=>$item['time'], "Size"=>$item['size'], "Type"=>"file");	
+			
 		$data = array(
 			'files' => json_encode($files)
 		);
