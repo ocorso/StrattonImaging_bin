@@ -44,7 +44,8 @@ $route['default_controller'] 				= "home_controller";
 $route['scaffolding_trigger'] 				= "";
 
 $route['ftp/login.json']					= "ftp_controller/login";
-$route['ftp/refresh.json']						= 'ftp_controller/get_directory';
+$route['ftp/refresh.json']					= 'ftp_controller/get_directory';
+$route['ftp/upload/']						= 'ftp_controller/upload';
 
 $route['xml/site/learn.xml']				= 'screen_controller/learn';
 $route['xml/site/craft.xml']				= 'screen_controller/craft';
