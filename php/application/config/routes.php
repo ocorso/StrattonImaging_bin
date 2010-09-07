@@ -45,11 +45,13 @@ $route['scaffolding_trigger'] 				= "";
 
 $route['ftp/login.json']					= "ftp_controller/login";
 $route['ftp/refresh.json']					= 'ftp_controller/get_directory';
-$route['ftp/upload/']						= 'ftp_controller/upload';
+$route['ftp/upload']						= 'ftp_controller/upload';
 
 $route['xml/site/learn.xml']				= 'screen_controller/learn';
 $route['xml/site/craft.xml']				= 'screen_controller/craft';
 $route['xml/site/credits.xml']				= 'screen_controller/credits';
+
+$route['db/createTable']					= 'db_controller';
 
 
 /* which brings us back to do oh oh oh doe a deer a female deer...*/

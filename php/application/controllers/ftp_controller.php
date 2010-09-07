@@ -72,53 +72,57 @@ class Ftp_controller extends Controller {
 	
 	function upload(){
 		
-		$MAXIMUM_FILESIZE = 1024 * 1024 * 200; // 200MB
-		$MAXIMUM_FILE_COUNT = 10; // keep maximum 10 files on server
-		echo exif_imagetype($_FILES['Filedata']);
-		if ($_FILES['Filedata']['size'] <= $MAXIMUM_FILESIZE)
-		{
-		    move_uploaded_file($_FILES['Filedata']['tmp_name'], "./temporary/".$_FILES['Filedata']['name']);
-		    $type = exif_imagetype("./temporary/".$_FILES['Filedata']['name']);
-		    if ($type == 1 || $type == 2 || $type == 3)
-		    {
-		        rename("./temporary/".$_FILES['Filedata']['name'], "./images/".$_FILES['Filedata']['name']);
-		    }
-		    else
-		    {
-		        unlink("./temporary/".$_FILES['Filedata']['name']);
-		    }
-		}
-		$directory = opendir('./images/');
-		$files = array();
-		while ($file = readdir($directory))
-		{
-		    array_push($files, array('./images/'.$file, filectime('./images/'.$file)));
-		}
-		usort($files, sorter);
-		if (count($files) > $MAXIMUM_FILE_COUNT)
-		{
-		    $files_to_delete = array_splice($files, 0, count($files) - $MAXIMUM_FILE_COUNT);
-		    for ($i = 0; $i < count($files_to_delete); $i++)
-		    {
-		        unlink($files_to_delete[$i][0]);
-		    }
-		}
-		print_r($files);
-		closedir($directory);
+		$MAXIMUM_FILESIZE = 1024 * 1024 * 191; // 191MB
 		
-		function sorter($a, $b)
-		{
-		    if ($a[1] == $b[1])
-		    {
-		        return 0;
-		    }
-		    else
-		    {
-		        return ($a[1] < $b[1]) ? -1 : 1;
-		    }
-		}
-
+		//make sure we have the data
+		if (isset($_FILES['ored_data']) ) {
+			//make sure its small enough
+			if ($_FILES['ored_data']['size'] <= $MAXIMUM_FILESIZE ){
+				
+				//setup vars
+				/* Set the upload directory */
+				$upload_dir = "./strattonftp/".$this->input->post('dir');
+				print_r($this->input->post('dir'));
+				/* PHP temp_name variable for file upload */
+				$temp_name = $_FILES['ored_data']['tmp_name'];
+				
+				/* PHP file_name variable sent from Flex */
+				$file_name = $_FILES['ored_data']['name'];
+				 
+				/* PHP file_size variable sent from Flex */
+				$file_size = $_FILES['ored_data']['size'];
+				
+				/* PHP file_type variable sent from Flex */
+				$file_type = $_FILES['ored_data']['type'];
+				
+				/* Set the file_url to the hosturl and the updload directory and filename */
+				$file_url = $_SERVER['HTTP_HOST'] . $upload_dir . $file_name;
+				
+				/* Replace any computer garbage  */
+				$file_name = str_replace("\\","",$file_name);
+				
+				/* Replace any garbage */
+				$file_name = str_replace("'","",$file_name);
+				
+				/* Set up the filepath */
+				$file_path = $upload_dir.$file_name;
+					    move_uploaded_file($_FILES['ored_data']['tmp_name'], "./php/temp/".$_FILES['ored_data']['name']);
+				        rename("./php/temp/".$_FILES['ored_data']['name'], "./strattonftp/".$_FILES['ored_data']['name']);
+			}//end if
+			$directory = opendir('./strattonftp/');
+			$files = array();
+			while ($file = readdir($directory))
+			{
+			    array_push($files, array('./strattonftp/'.$file, filectime('./strattonftp/'.$file)));
+			}
+			print_r($files);
+			closedir($directory);
 	
+					
+		
+		}//end if we have anypost data
+		else{ print_r("no correct post data");}
+		
 	}//end function
 
 	function _openConnection() {

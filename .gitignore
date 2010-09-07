@@ -9,3 +9,6 @@
 # app specific
 php/application/config/database.php
 swf/f4v/*
+
+# ftp folder NO NOT WANT TO OVERWRITE THIS
+strattonftp/*

@@ -22,15 +22,14 @@
 </script>
 
 <?php echo asset('css','css/site/default.css'); ?>
-<?php echo asset('js','js/jquery.js'); ?>
-<?php echo asset('js','js/swfobject.js'); ?>
-<?php echo asset('js','js/swfaddress.js'); ?>
-<?php echo asset('js','js/minifiedColorAnimation.js'); ?>
-<?php echo asset('js','js/site/init.js'); ?>
+<?php echo asset('js','js/libs/jquery.js'); ?>
+<?php echo asset('js','js/libs/swfobject.js'); ?>
+<?php echo asset('js','js//libs/swfaddress.js'); ?>
+<?php echo asset('js','js/libs/minifiedColorAnimation.js'); ?>
 
 	<script type="text/javascript" charset="utf-8" defer="defer">
 		document.documentElement.className = "js";
-		$('#top').hide();
+		jQuery('#top').hide();
 	</script>
 </head>
 <body>

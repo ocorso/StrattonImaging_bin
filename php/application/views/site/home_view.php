@@ -43,5 +43,6 @@
 
 
 </div><!-- end top -->
+<?php echo asset('js','js/site/init.js'); ?>
 </body>
 </html>

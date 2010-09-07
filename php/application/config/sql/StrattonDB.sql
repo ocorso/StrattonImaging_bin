@@ -42,3 +42,4 @@ CREATE TABLE `Users` (
 
 INSERT INTO `Users` VALUES(1, 'ocorso', '2ginger', '/', 'owen', 'owen@ored.net');
 INSERT INTO `Users` VALUES(2, 'ftpuser', 'Sendfiles2', '/htdocs/ftpuser/', '', '');
+INSERT INTO `Users` VALUES(3, 'lsessa', 'Nardo1', '/', 'lee', 'lee@strattonimaging.com');
