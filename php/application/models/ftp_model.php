@@ -23,7 +23,7 @@ class Ftp_Model extends Model {
         $name		= (isset($result[0]['name']))				?	$result[0]['name'] : "";
         $r 			= array('s' => $success, 
         					'p' => $initialDir,
-        					'n' => $name, 
+        					'n' => ucfirst($name), 
         					'e' => $email
         				);
         

@@ -1,2 +1,1 @@
-<?= //$files ?>
-[{"Name":"ATLAS","Date":"08:25","Size":"4 KB","Type":"folder"},{"Name":"MAKI","Date":"09:18","Size":"4 KB","Type":"folder"},{"Name":"Mildred Pierce","Date":"09:26","Size":"4 KB","Type":"folder"},{"Name":"VSB","Date":"14:15","Size":"4 KB","Type":"folder"},{"Name":"ftpuser","Date":"21:22","Size":"4 KB","Type":"folder"},{"Name":"flswc.zip","Date":"18:31","Size":"330.09 KB","Type":"file"},{"Name":"ored_logo.jpg","Date":"12:46","Size":"3.02 KB","Type":"file"}]
+<?= $files ?>
