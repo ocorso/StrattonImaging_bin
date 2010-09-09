@@ -40,6 +40,6 @@ CREATE TABLE IF NOT EXISTS `Users` (
 -- Dumping data for table `Users`
 --
 
-INSERT INTO `Users` VALUES(1, 'ocorso', '2ginger', '/', 'owen', 'owen@ored.net');
-INSERT INTO `Users` VALUES(2, 'ftpuser', 'Sendfiles2', '/htdocs/ftpuser/', 'Guest', 'info@strattonimaging.com');
-INSERT INTO `Users` VALUES(3, 'lsessa', 'Nardo1', '/', 'lee', 'lee@strattonimaging.com');
+INSERT INTO `Users` VALUES(1, 'ocorso', '2ginger', 'strattonftp/', 'owen', 'owen@ored.net');
+INSERT INTO `Users` VALUES(2, 'ftpuser', 'Sendfiles2', 'strattonftp/ftpuser/', 'Guest', 'info@strattonimaging.com');
+INSERT INTO `Users` VALUES(3, 'lsessa', 'Nardo1', 'strattonftp/', 'lee', 'lee@strattonimaging.com');

@@ -24,8 +24,7 @@ class Ftp_controller extends Controller {
 		//verify login username and password returns a path
 		//when it does, return name and email to display in flash
 		
-		//asychronously retrieve ftp directory. green/red indicator in view.
-		
+
 		$this->load->model('Ftp_Model');
 		$d = $this->input->post('d');
 		$jArr = json_decode(base64_decode($d), true);
@@ -43,7 +42,7 @@ class Ftp_controller extends Controller {
 		$d = $this->input->post('d');
 		$jArr = json_decode(base64_decode($d), true);
 		
-		$currentPath = $jArr['p'];
+		$currentPath = str_replace("strattonftp", "", $jArr['p']);
 		$this->_openConnection();
 		
 		$list = $this->ftp->list_files($currentPath);
