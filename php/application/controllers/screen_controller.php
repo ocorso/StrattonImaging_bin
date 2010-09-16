@@ -42,10 +42,10 @@ Using state-of-the-art technology, environmentally-safe materials, and superior 
 		
 	}//end function
 	function craft(){					//	Service name		// number of images
-		$data = array (	'services'=> array(	'Grand Format' 				=> '6', 
-											'Custom Cut Vinyl'		 	=> '4', 
+		$data = array (	'services'=> array(	'Grand Format' 				=> '5', 
+											'Cut Vinyl'				 	=> '4', 
 											'Event Signage' 			=> '5', 
-											'Graphics In Motion' 		=> '5', 
+											'Vehicle Graphics'	 		=> '5', 
 											'Comprehensive Capabilities'=> '6', 
 											'Custom Installations'		=> '1', 
 											'Offset Printing' 			=> '4', 
