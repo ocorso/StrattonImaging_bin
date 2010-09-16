@@ -31,7 +31,9 @@ During the experiments, Mr. Stratton wore a reversing telescope for an extended 
 												array ( 
 													'id'		=> 'si',	
 													'label'		=> 'Stratton Imaging',
-													'content'	=> "Since 2001, Stratton Imaging has been a visionary print provider offering clients custom, unique solutions to their graphic needs.
+													'content'	=> "Since 2001, Stratton Imaging has been a visionary print provider offering clients custom, unique solutions to their graphic needs.  Specializing in high-end, quality print deliverables, we take pride in our craft.
+													
+Building on George Stratton's idea that one can adapt their perception to fit a changing world, Stratton Imaging strives to bring all of their client's dreams into reality.  In addition, by adopting this adaptive attitude, we begin to see not only in black and white but in a myriad of colors complete with the richness of full spectrum of experience.  
 
 Using state-of-the-art technology, environmentally-safe materials, and superior craftsmenship, Stratton delivers the job right everytime. Basically, we provide hands on graphic management from conception to completion to insure your projectÕs success.")
 											)
@@ -45,7 +47,7 @@ Using state-of-the-art technology, environmentally-safe materials, and superior 
 											'Event Signage' 			=> '5', 
 											'Graphics In Motion' 		=> '5', 
 											'Comprehensive Capabilities'=> '6', 
-											'Studio' 					=> '1', 
+											'Custom Installations'		=> '1', 
 											'Offset Printing' 			=> '4', 
 											'Retail Displays' 			=> '6', 
 											'Theatrical Backdrops' 		=> '5',
