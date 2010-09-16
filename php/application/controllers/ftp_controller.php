@@ -71,6 +71,9 @@ class Ftp_controller extends Controller {
 	
 	function upload(){
 		
+		/* Set the upload directory */
+		$upload_dir = "./".$this->input->post('dir');
+
 		$MAXIMUM_FILESIZE = 1024 * 1024 * 191; // 191MB
 		
 		//make sure we have the data
@@ -79,11 +82,11 @@ class Ftp_controller extends Controller {
 			if ($_FILES['ored_data']['size'] <= $MAXIMUM_FILESIZE ){
 				
 				//setup vars
-				/* Set the upload directory */
-				$upload_dir = "./strattonftp/".$this->input->post('dir');
-				print_r($this->input->post('dir'));
+print_r($this->input->post('dir'));
+				
 				/* PHP temp_name variable for file upload */
 				$temp_name = $_FILES['ored_data']['tmp_name'];
+				$temp_path = "./php/temp/";
 				
 				/* PHP file_name variable sent from Flex */
 				$file_name = $_FILES['ored_data']['name'];
@@ -105,21 +108,25 @@ class Ftp_controller extends Controller {
 				
 				/* Set up the filepath */
 				$file_path = $upload_dir.$file_name;
-					    move_uploaded_file($_FILES['ored_data']['tmp_name'], "./php/temp/".$_FILES['ored_data']['name']);
-				        rename("./php/temp/".$_FILES['ored_data']['name'], "./strattonftp/".$_FILES['ored_data']['name']);
-			}//end if
-			$directory = opendir('./strattonftp/');
+				
+				/* Move uploaded file into temp dir */
+				move_uploaded_file($temp_name, $temp_path.$file_name);
+				
+				/* Perform final rename to place file in target directory */
+				rename($temp_path.$file_name, $file_path);
+			}//end if file is small enough
+			
+			$directory = opendir($upload_dir);
 			$files = array();
 			while ($file = readdir($directory))
 			{
-			    array_push($files, array('./strattonftp/'.$file, filectime('./strattonftp/'.$file)));
+			    array_push($files, array($upload_dir.$file, filectime($upload_dir.$file)));
 			}
-			print_r($files);
+print_r($files);
 			closedir($directory);
-	
-					
-		
+			
 		}//end if we have anypost data
+		
 		else{ print_r("no correct post data");}
 		
 	}//end function
