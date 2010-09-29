@@ -48,7 +48,7 @@ Using state-of-the-art technology, environmentally-safe materials, and superior 
 											'Vehicle Graphics'	 		=> '5', 
 											'Retail Displays' 			=> '6', 
 											'Custom Installations'		=> '1', 
-											'Offset Printing' 			=> '4', 
+											'Offset Printing' 			=> '8', 
 											'Visual Products'			=> '6', 
 											'Theatrical Backdrops' 		=> '5',
 											'Graphics on Anything' 		=> '2'
