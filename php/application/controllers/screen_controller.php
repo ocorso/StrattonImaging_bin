@@ -42,16 +42,16 @@ Using state-of-the-art technology, environmentally-safe materials, and superior 
 		
 	}//end function
 	function craft(){					//	Service name		// number of images
-		$data = array (	'services'=> array(	'Grand Format' 				=> '5', 
-											'Cut Vinyl'				 	=> '4', 
-											'Event Signage' 			=> '5', 
-											'Vehicle Graphics'	 		=> '5', 
-											'Retail Displays' 			=> '6', 
+		$data = array (	'services'=> array(	'Grand Format' 				=> '6', 
+											'Cut Vinyl'				 	=> '6', 
+											'Event Signage' 			=> '9', 
+											'Vehicle Graphics'	 		=> '7', 
+											'Retail Displays' 			=> '8', 
 											'Custom Installations'		=> '1', 
 											'Offset Printing' 			=> '8', 
-											'Visual Products'			=> '6', 
-											'Theatrical Backdrops' 		=> '5',
-											'Graphics on Anything' 		=> '2'
+											'Visual Products'			=> '1', 
+											'Theatrical Backdrops' 		=> '7',
+											'Graphics on Anything' 		=> '4'
 										),
 						'imagesPath'	=> "site/craft/"
 					);
