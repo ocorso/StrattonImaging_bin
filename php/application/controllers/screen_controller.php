@@ -41,19 +41,22 @@ Using state-of-the-art technology, environmentally-safe materials, and superior 
 		$this->load->view('xml/learn', $data);
 		
 	}//end function
-	function craft(){					//	Service name		// number of images
-		$data = array (	'services'=> array(	'Grand Format' 				=> '6', 
-											'Cut Vinyl'				 	=> '6', 
-											'Event Signage' 			=> '9', 
-											'Vehicle Graphics'	 		=> '7', 
-											'Retail Displays' 			=> '8', 
-											'Custom Installations'		=> '1', 
-											'Offset Printing' 			=> '8', 
-											'Visual Products'			=> '1', 
-											'Theatrical Backdrops' 		=> '7',
-											'Graphics on Anything' 		=> '4'
-										),
-						'imagesPath'	=> "site/craft/"
+	function craft(){		
+		$craftDir	 	= 'img/site/craft/';
+		$servicesArr	= scandir($craftDir);
+		$tmpdata		= array();
+		
+		foreach($servicesArr as $service){
+			if ($service != '.' && $service != '..'){
+				$name 	= ucwords(str_replace("_", " ", $service));
+				$len	= count(scandir($craftDir.$service))-2;//minus 2 for noise!
+				array_push($tmpdata, array($name, $service, $len));
+				
+			}//end if not noise		
+		}//end foreach
+										//$tmpData = [0] Service name	[1] directory name  [2] number of images
+		$data = array (	'services'		=> $tmpdata,
+						'imagesPath'	=> str_replace("img/", "", $craftDir)
 					);
 		$this->load->view('xml/craft', $data);
 	}//end function
