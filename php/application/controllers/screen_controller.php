@@ -35,7 +35,7 @@ During the experiments, Mr. Stratton wore a reversing telescope for an extended 
 													
 Building on George Stratton's idea that one can adapt their perception to fit a changing world, Stratton Imaging strives to bring all of their client's dreams into reality.  In addition, by adopting this adaptive attitude, we begin to see not only in black and white but in a myriad of colors complete with the richness of full spectrum of experience.  
 
-Using state-of-the-art technology, environmentally-safe materials, and superior craftsmenship, Stratton delivers the job right everytime. Basically, we provide hands on graphic management from conception to completion to insure your projectÕs success.")
+Using state-of-the-art technology, environmentally-safe materials, and superior craftsmanship, Stratton delivers the job right every time. Basically, we provide hands on graphic management from conception to completion to insure your project's success.")
 											)
 					);
 		$this->load->view('xml/learn', $data);
